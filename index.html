@@ -1,52 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Speed Draw !" />
-    <title>Speed Draw !</title>
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <title>Speed Draw - Proto</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-
   <body>
-    <div class="main-screen">
-      <header class="header-container">
-        <div class="logo">
-          <img src="./assets/logo.png" alt="Logo du site" />
+    <div id="homeScreen">
+      <h1>SpeedDraw++</h1>
+      <button id="startBtn">Jouer</button>
+    </div>
+
+    <div id="gameScreen" class="hidden">
+      <div id="toolbar">
+        <input type="color" id="colorPicker" />
+        <input type="range" id="brushSizeRange" min="1" max="50" value="5" />
+        <input
+          type="range"
+          id="brushOpacityRange"
+          min="0.1"
+          max="1"
+          step="0.1"
+          value="1"
+        />
+        <span id="themeDisplay"></span>
+        <span id="timer">05:00</span>
+      </div>
+
+      <div id="canvas-container"></div>
+
+      <div id="layers-panel">
+        <div class="panel-header">
+          <span>Calques</span>
+          <button id="addLayerBtn">+</button>
         </div>
-
-        <nav class="nav-menu">
-          <ul class="list-menu">
-            <li class="component-menu btn-connect">Se Connecter</li>
-
-            <li class="component-menu btn-inscription">S'inscrire</li>
-          </ul>
-        </nav>
-      </header>
-
-      <main class="main-container">
-        <h1 class="main-title">Speed Draw !</h1>
-
-        <p class="inspiration-title">
-          (Inspired by
-          <a
-            href="https://www.roblox.com/fr/games/7074772062/Speed-Draw"
-            target="_blank"
-          >
-            Speed Draw !
-          </a>
-          )
-        </p>
-
-        <button class="btn-play">Play !</button>
-      </main>
-
-      <footer class="footer-container">
-        <p class="copyright">© Copyright 2025 - Speed Draw !</p>
-      </footer>
+        <ul id="layersList"></ul>
+      </div>
+      <div id="cursor"></div>
     </div>
 
     <script src="./js/app.js"></script>
